@@ -1,0 +1,20 @@
+{
+  "name": "weebly",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "pm2": "pm2 dist/main.js",
+    "compile": "tsc && node dist/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/chance": "^1.1.6",
+    "chance": "^1.1.11",
+    "pm2": "^5.3.0",
+    "puppeteer": "^21.6.1",
+    "typescript": "^5.3.3",
+    "unique-names-generator": "^4.7.1"
+  }
+}

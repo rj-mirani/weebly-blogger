@@ -1,0 +1,1 @@
+npx pm2 start dist/main.js && npx pm2 logs main && npx pm2 stop main
