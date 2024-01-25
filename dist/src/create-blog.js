@@ -74,6 +74,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     for (const finalData of results_json_1.default) {
         try {
             console.log(`Processing`, finalData);
+            // @ts-ignore
             if (finalData.sites.length >= 10)
                 continue;
             const browser = yield puppeteer_1.default.launch({ headless: false, args: ['--proxy-server=dc.smartproxy.com:10100'], });
@@ -120,6 +121,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
             yield page.reload();
             // Fill "oiohomoiufuytuv... on <input> #domain-search-input
             yield page.waitForSelector('#domain-search-input:not([disabled])');
+            // @ts-ignore
             yield page.type('#domain-search-input', `${finalData === null || finalData === void 0 ? void 0 : finalData.firstName}${finalData === null || finalData === void 0 ? void 0 : finalData.lastName}${generateFakeGmail().replace('@gmail.com', '')}`);
             // Click on <button> "Search"
             yield page.waitForSelector('.search-button');
@@ -133,6 +135,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
             // Click on <a> "Done"
             // await Done?.click()
             const link = yield page.waitForSelector('#subdomain-complete > p:nth-child(2) > strong > a');
+            // @ts-ignore
             finalData.sites.push(yield ((_f = (yield (link === null || link === void 0 ? void 0 : link.getProperty('textContent')))) === null || _f === void 0 ? void 0 : _f.jsonValue()));
             // #siteLocation
             const Publish = yield page.waitForSelector('.btn__header--blue');

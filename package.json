@@ -4,8 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "pm2": "pm2 dist/main.js",
-    "compile": "tsc && node dist/main.js"
+    "pm2": "pm2 dist/src/main.js",
+    "compile": "tsc && node dist/src/main.js"
   },
   "author": "",
   "license": "ISC",
